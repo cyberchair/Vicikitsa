@@ -1,0 +1,81 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f1f1f1;
+	background-image: url(Minimal\ Blue\ Forest\ Wallpaper.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	backdrop-filter: blur(5px);
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+.profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.profile img {
+	max-width: 200px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
+.courses {
+	margin-bottom: 20px;
+}
+
+.courses h2 {
+	margin-bottom: 10px;
+}
+
+.courses ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.courses li {
+	margin-bottom: 5px;
+}
+
+.reviews {
+	margin-bottom: 20px;
+}
+
+.reviews h2 {
+	margin-bottom: 10px;
+}
+
+.reviews ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.reviews li {
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+	main {
+		padding: 10px;
+	}
+}

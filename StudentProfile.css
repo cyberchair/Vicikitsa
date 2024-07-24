@@ -1,0 +1,85 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+    background-color: #f1f1f1;
+    background-image: url(Minimal\ Blue\ Forest\ Wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+header {
+	background-color: rgba(1,92,161,255);
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.card {
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	max-width: 800px;
+	width: 100%;
+}
+
+.card-header {
+	background-color: #55708a;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+.card-header img {
+	border-radius: 50%;
+	height: 100px;
+	margin-right: 20px;
+	width: 100px;
+}
+
+.card-header h2 {
+	margin: 0;
+}
+
+.card-body {
+	padding: 20px;
+    background-color: #949ccc;
+}
+
+.info {
+	margin-bottom: 20px;
+}
+
+.info h3 {
+	margin: 0 0 10px 0;
+}
+
+.info p {
+	margin: 0;
+}
+
+.info ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.info li {
+	display: inline-block;
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}

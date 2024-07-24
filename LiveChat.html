@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Live Chat Example</title>
+    <style>
+        /* Style for chat container */
+        body {
+            background-color: #24252a;
+            background-image: url(Minimal\ Blue\ Forest\ Wallpaper.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            backdrop-filter: blur(5px);
+        }
+
+        #chat-window {
+            height: 400px;
+            width: 400px;
+            border: 3px solid rgb(35, 50, 254);
+            border-radius: 10px;
+            /* overflow-y: scroll; */
+            padding: 10px;
+        }
+
+        /* Style for chat messages */
+        #message {
+            background-color: #f1f0f0;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            clear: both;
+        }
+
+        /* Style for chat messages sent by user */
+        #message.user {
+            background-color: #cae8d5;
+            float: right;
+        }
+
+        /* Style for chat messages sent by other users */
+        #message.other {
+            background-color: #d4d4d4;
+            float: left;
+        }
+
+        /* Style for chat input form */
+        #chat-form {
+            padding: 30px 5px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #chat-form input[type="text"] {
+            width: 80%;
+            padding: 5px;
+            margin-right: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        #chat-form input[type="submit"] {
+            width: 20%;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #cont {
+            margin: 50px 400px;
+            border: 3px solid rgb(35, 50, 254);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        #chat-window p {
+            border: 2px solid gray;
+            border-radius: 5px;
+            align-items: end;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+        <center>
+            <h1>Live Chat Example</h1>
+            <span>Welcome to the chat room!</span>
+
+            <div id="chat-window">
+                <p></p>
+            </div>
+
+            <form id="chat-form">
+                <label for="message">Message:</label>
+                <input type="text" id="message" name="message">
+                <input type="submit" value="Send">
+            </form>
+        </center>
+    </div>
+
+    <script>
+        const sendMessage = async (message, imageFile) => {
+            try {
+                const formData = new FormData();
+                formData.append('message', message);
+                formData.append('image', imageFile);
+
+                const response = await fetch('/send-message', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to send message');
+                }
+
+                const data = await response.json();
+                console.log('Message sent:', data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        // Example usage
+        const messageInput = document.querySelector('#message-input');
+        const imageInput = document.querySelector('#image-input');
+
+        document.querySelector('#send-button').addEventListener('click', () => {
+            const message = messageInput.value;
+            const imageFile = imageInput.files[0];
+            sendMessage(message, imageFile);
+        });
+
+    </script>
+</body>
+
+</html>
